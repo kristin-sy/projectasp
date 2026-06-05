@@ -11,3 +11,11 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 URL: https://github.com/kristin-sy/projectasp
 BugReports: https://github.com/kristin-sy/projectasp/issues
+LinkingTo: 
+    Rcpp
+Imports: 
+    ggplot2,
+    Rcpp
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
