@@ -2,7 +2,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-CharacterVector specialcharacter(CharacterVector x) {
+CharacterVector specialcharacters(CharacterVector x) {
   int n = x.size();
   CharacterVector out(n);
 
