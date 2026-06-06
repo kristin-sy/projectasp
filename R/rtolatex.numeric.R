@@ -1,6 +1,6 @@
 #' convert numbers to latex
 #'
-#' Takes a numeric value and turns it into a LaTeX \newcommand macro.
+#' Takes a numeric value and turns it into a LaTeX newcommand macro.
 #' You can then use that command anywhere in your .tex file.
 #'
 #' @param x a single numeric value
@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @examples
-#' to_latex(0.94, name = "accuracy", digits = 2)
+#' rtolatex(0.94, name = "accuracy", digits = 2)
 rtolatex.numeric <- function(x, name, digits = 2, ...) {
   # Check that x is a single number
   if (length(x) != 1) {
