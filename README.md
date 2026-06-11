@@ -38,21 +38,21 @@ library(projectasp)
 doc <- document_container()
 
 # add a numeric result
-doc <- add_snippet(doc, rtolatex(0.94, name = "accuracy"), "accuracy")
+doc <- add_snippet(doc, rtolatex(0.5, name = "mean"), "mean")
 
 # add a hypothesis test result
 doc <- add_snippet(doc, rtolatex(t.test(rnorm(30), rnorm(30))), "ttest")
 
 # write all snippets to .tex files
 write_textfile(doc)
-#> Written: outputs/accuracy.tex 
+#> Written: outputs/mean.tex 
 #> Written: outputs/ttest.tex
 ```
 
 In your LaTeX document, reference the results with:
 
 ``` latex
-The model accuracy was \accuracy{}.
+The model mean was \mean{}.
 ```
 
 ## Dependencies
