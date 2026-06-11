@@ -1,5 +1,5 @@
 test_that("pvalue formats small p-values correctly", {
-  expect_equal(pvalue(0.00001), "$<$ 0.001")
+  expect_equal(pvalue(0.00001), "$< 0.001$")
 })
 
 test_that("pvalue formats normal p-values correctly", {
