@@ -64,7 +64,7 @@ frame pre-processing
 
 ## Workflow
 
-1.  Run locall R analysis and call `write_textfile()` to save results as
+1.  Run local R analysis and call `write_textfile()` to save results as
     `.tex` files
 2.  Push to GitHub from R studio
 3.  Pull in Overleaf to sync the files (make sure your Overleaf is

@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @examples
-#' rtolatex(0.94, name = "accuracy", digits = 2)
+#' rtolatex(0.5, name = "mean", digits = 2)
 rtolatex.numeric <- function(x, name, digits = 2, ...) {
   if (length(x) != 1) {
     stop("`x` must be a single numeric value")

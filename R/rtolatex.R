@@ -42,6 +42,7 @@ rtolatex.default <- function(x, ...) {
     "Classes supported must fall within: numeric, data.frame, htest, ggplot"
   )
 }
+
 #' print latex objects
 #'
 #' @param x a latex snippet
@@ -52,5 +53,3 @@ print.latex_snippet <- function(x, ...) {
   cat(x$code, "\n")
   invisible(x)
 }
-
-#' @examples

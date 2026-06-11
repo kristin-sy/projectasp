@@ -13,7 +13,8 @@
 #' @export
 #'
 #' @examples
-#' rtolatex(head(mtcars), caption = "Motor Trend Car Data", label = "tab:mtcars")
+#' df <- data.frame(x = rnorm(5), y = rnorm(5))
+#' rtolatex(df, caption = "Table", label = "tab:example")
 rtolatex.data.frame <- function(x, caption = "", label = "", digits = 2, ...) {
   x <- dplyr::mutate(x, dplyr::across(dplyr::where(is.numeric), ~ round(., digits))) #numeric rounding to 2 digits
   column_number <- ncol(x)
