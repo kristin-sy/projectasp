@@ -28,6 +28,6 @@ includes graphics command to insert it into your document
 }
 \examples{
 library(ggplot2)
-p <- ggplot(mtcars, aes(x = wt, y = mpg)) + geom_point()
+p <- ggplot(data.frame(x = rnorm(30)), aes(x = x)) + geom_histogram(bins = 10)
 rtolatex(p, filename = "my_plot")
 }

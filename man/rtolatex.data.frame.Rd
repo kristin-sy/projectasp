@@ -25,5 +25,6 @@ transforms dataframe to a latex tabular form
 special characters are automatically adjust to latex
 }
 \examples{
-rtolatex(head(mtcars), caption = "Motor Trend Car Data", label = "tab:mtcars")
+df <- data.frame(x = rnorm(5), y = rnorm(5))
+rtolatex(df, caption = "Table", label = "tab:example")
 }

@@ -23,5 +23,5 @@ turns the number to a latex reference
 automatic updates when results are refreshed
 }
 \examples{
-rtolatex(0.94, name = "accuracy", digits = 2)
+rtolatex(0.5, name = "mean", digits = 2)
 }
