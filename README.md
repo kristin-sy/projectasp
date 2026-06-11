@@ -75,7 +75,7 @@ frame pre-processing
 
 ## Demo
 
-A demo script “demo script.R” is included in the repository which runs
+A demo script “demoscript.R” is included in the repository which runs
 the function on all four methods: numeric, data frame, hypothesis test,
 plots.
 

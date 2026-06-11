@@ -3,3 +3,5 @@
 ^LICENSE\.md$
 ^outputs$
 ^README\.Rmd$
+^demoscript\.R$
+^main\.tex$
