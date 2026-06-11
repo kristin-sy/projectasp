@@ -56,4 +56,24 @@ In your LaTeX document, reference the results with:
 The model accuracy was \accuracy{}.
 ```
 
+## Dependencies
+
+projectasp imports the following packages:
+
+`Rcpp` for C++ integration
+`ggplot2` for saving plots
+`dplyr` for data frame pre-processing
+
+## Workflow
+
+1. Run locall R analysis and call `write_textfile()` to save results as `.tex` files
+2. Push to GitHub from R studio
+3. Pull in Overleaf to sync the files (make sure your Overleaf is connected to Github)
+4. Reference results in your LaTeX document using `\input{outputs/filename.tex}`
+5. Recompile in Overleaf, results will update automatically
+
+## Demo
+A demo script "demo script.R" is included in the repository which runs the function on all four methods: numeric, data frame, hypothesis test, plots.
+
+
 In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

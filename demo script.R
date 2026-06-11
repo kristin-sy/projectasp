@@ -15,8 +15,9 @@ doc <- add_snippet(doc, rtolatex(mean(data), name = "mean", digits = 2), "mean")
 
 #dataframe
 summary_df <- data.frame(
-  Metric = c("Mean", "SD", "Min", "Max"),
-  Value = c(mean(data), sd(data), min(data), max(data))
+  "Metric" = c("Mean", "SD", "Min", "Max"),
+  "Value (%)" = c(mean(data), sd(data), min(data), max(data)),
+  check.names = FALSE
 )
 doc <- add_snippet(doc, rtolatex(summary_df, caption = "Model Performance", label = "tab:performance"), "table")
 
@@ -26,6 +27,8 @@ doc <- add_snippet(doc, rtolatex(t.test(data, mu = 0)), "ttest")
 #ggplot
 image <- ggplot(data.frame(data), aes(x = data)) + geom_histogram(bins = 10)
 doc <- add_snippet(doc, rtolatex(image, filename = "histogram"), "histogram")
+
+specialcharacters("50% accuracy & p_value in $model #1")
 
 #turn all snippets to .tex files
 write_textfile(doc)
