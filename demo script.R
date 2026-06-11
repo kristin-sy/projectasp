@@ -21,7 +21,7 @@ summary_df <- data.frame(
 doc <- add_snippet(doc, rtolatex(summary_df, caption = "Model Performance", label = "tab:performance"), "table")
 
 #hypothesis test
-doc <- add_snippet(doc, rtolatex(t.test(data, mu = 0.48)), "ttest")
+doc <- add_snippet(doc, rtolatex(t.test(data, mu = 0)), "ttest")
 
 #ggplot
 image <- ggplot(data.frame(data), aes(x = data)) + geom_histogram(bins = 10)
