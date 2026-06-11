@@ -7,7 +7,7 @@
 \method{rtolatex}{ggplot}(x, filename, path = "outputs", width = 6, height = 4, ...)
 }
 \arguments{
-\item{x}{the ggplot itself}
+\item{x}{the ggplot}
 
 \item{filename}{name of the file}
 
@@ -23,8 +23,8 @@
 latex snippet
 }
 \description{
-Saves a ggplot object as a PDF file and returns a LaTeX snippet
-with the includegraphics command to insert it into your document.
+saves ggplots as pdf files
+includes graphics command to insert it into your document
 }
 \examples{
 library(ggplot2)

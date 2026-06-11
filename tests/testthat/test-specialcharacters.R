@@ -1,4 +1,4 @@
-test_that("specialcharacters percent sign", {
+test_that("specialcharacters percentage", {
   expect_equal(specialcharacters("50%"), "50\\%")
 })
 
@@ -10,11 +10,11 @@ test_that("specialcharacters underscore", {
   expect_equal(specialcharacters("p_value"), "p\\_value")
 })
 
-test_that("specialcharacters dollar sign", {
+test_that("specialcharacters euro sign", {
   expect_equal(specialcharacters("$100"), "\\$100")
 })
 
-test_that("specialcharacters leaves normal text unchanged", {
+test_that("specialcharacters leaves normal text the same", {
   expect_equal(specialcharacters("hello world"), "hello world")
 })
 

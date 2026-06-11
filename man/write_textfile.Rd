@@ -16,8 +16,8 @@ returns document container
 }
 \description{
 creates a .tex file for each entry in the document container
-as a separate .tex file in the output folder. These files can then
-input into latex using
+as a separate .tex file in the output folder
+files get reference in latex using the input command
 }
 \examples{
 doc <- document_container()

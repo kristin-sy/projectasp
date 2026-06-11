@@ -3,7 +3,7 @@ test_that("write_textfile creates output folder if it doesn't exist", {
   doc <- add_snippet(doc, rtolatex(0.94, name = "accuracy"), "accuracy")
   write_textfile(doc)
   expect_true(dir.exists("test_outputs"))
-  # Clean up
+  #clean up
   unlink("test_outputs", recursive = TRUE)
 })
 
@@ -12,7 +12,7 @@ test_that("write_textfile creates a .tex file", {
   doc <- add_snippet(doc, rtolatex(0.94, name = "accuracy"), "accuracy")
   write_textfile(doc)
   expect_true(file.exists("test_outputs/accuracy.tex"))
-  # Clean up
+  #clean up
   unlink("test_outputs", recursive = TRUE)
 })
 

@@ -19,8 +19,8 @@
 latex snippet
 }
 \description{
-Takes a numeric value and turns it into a LaTeX newcommand macro.
-You can then use that command anywhere in your .tex file.
+turns the number to a latex reference
+automatic updates when results are refreshed
 }
 \examples{
 rtolatex(0.94, name = "accuracy", digits = 2)

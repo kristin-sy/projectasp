@@ -4,7 +4,7 @@
 \alias{rtolatex.data.frame}
 \title{convert dataframe into latex}
 \usage{
-\method{rtolatex}{data.frame}(x, caption = "", label = "", ...)
+\method{rtolatex}{data.frame}(x, caption = "", label = "", digits = 2, ...)
 }
 \arguments{
 \item{x}{a dataframe}
@@ -13,14 +13,16 @@
 
 \item{label}{label for table}
 
+\item{digits}{digits to be rounded to}
+
 \item{...}{ignored only for syntax}
 }
 \value{
 latex snippet
 }
 \description{
-Takes a data frame and turns it into a LaTeX tabular environment.
-Special characters in the data are automatically escaped.
+transforms dataframe to a latex tabular form
+special characters are automatically adjust to latex
 }
 \examples{
 rtolatex(head(mtcars), caption = "Motor Trend Car Data", label = "tab:mtcars")

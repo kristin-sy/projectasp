@@ -15,10 +15,8 @@
 latex snippet
 }
 \description{
-Takes the output of a hypothesis test like t.test() or chisq.test()
-and formats it as a ready to use inline sentence in APA style.
+formats the output of a hypothesis test like t.test() to be used inline
 }
 \examples{
 rtolatex(t.test(rnorm(30), rnorm(30)))
-rtolatex(chisq.test(c(10, 20, 30)))
 }

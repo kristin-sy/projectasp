@@ -2,18 +2,18 @@
 % Please edit documentation in R/rtolatex.R
 \name{rtolatex}
 \alias{rtolatex}
-\title{Turn R output into Latex}
+\title{turn R output into latex}
 \usage{
 rtolatex(x, ...)
 }
 \arguments{
-\item{x}{The R object to be converted}
+\item{x}{object to be converted into latex}
 
-\item{...}{Additional object to the converted}
+\item{...}{other objects that need to be converted}
 }
 \value{
-Latex inputs
+latex formatted inputs
 }
 \description{
-Turn R output into Latex
+turn R output into latex
 }
