@@ -3,11 +3,11 @@ test_that("pvalue formats small p-values correctly", {
 })
 
 test_that("pvalue formats normal p-values correctly", {
-  expect_equal(pvalue(0.019), "0.019")
+  expect_equal(pvalue(0.019), "= 0.019")
 })
 
 test_that("pvalue rounds to 3 decimal places", {
-  expect_equal(pvalue(0.1), "0.100")
+  expect_equal(pvalue(0.1), "= 0.100")
 })
 
 test_that("pvalue throws error for non-numeric input", {
