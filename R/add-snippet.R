@@ -1,6 +1,6 @@
 #' add a snippet to a document container
 #'
-#' inserts a latex snippet into the document
+#' inserts a latex snippet into the document container
 #'
 #' @param doc the document container
 #' @param snippet the snippet from rtolatex().
@@ -26,7 +26,7 @@ add_snippet <- function(doc, snippet, name, ...) {
 
   #name checks
   if (missing(name)) {
-    stop("You must provide a `name` for the snippet")
+    stop("provide a `name` for the snippet")
   }
 
   #add the snippet to the container

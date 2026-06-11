@@ -1,7 +1,6 @@
 #' convert a hypothesis test results to latex
 #'
-#' Takes the output of a hypothesis test like t.test() or chisq.test()
-#' and formats it as a ready to use inline sentence in APA style.
+#' formats the output of a hypothesis test like t.test() to be used inline
 #'
 #' @param x result of a hypothesis test
 #' @param ... ignored only for syntax
@@ -11,27 +10,18 @@
 #'
 #' @examples
 #' rtolatex(t.test(rnorm(30), rnorm(30)))
-#' rtolatex(chisq.test(c(10, 20, 30)))
 rtolatex.htest <- function(x, ...) {
-  # Get the test statistic and round it
-  statistic <- round(x$statistic, 2)
-
-  # Get the name of the statistic (e.g. "t" or "X-squared")
-  stat_name <- names(x$statistic)
-
-  # Format the p-value using our helper function
+  tstat <- round(x$statistic, 2)
+  tstat_name <- names(x$statistic)
   p <- pvalue(x$p.value)
 
-  # Build the sentence differently depending on the test type
+  #formatting sentence
   if (!is.null(x$parameter)) {
-    # Tests with degrees of freedom, e.g. t-test
     df <- round(x$parameter, 0)
-    code <- paste0(stat_name, "(", df, ") = ", statistic, ", p = ", p)
+    code <- paste0(tstat_name, "(", df, ") = ", tstat, ", p = ", p)
   } else {
-    # Tests without degrees of freedom
-    code <- paste0(stat_name, " = ", statistic, ", p = ", p)
+    code <- paste0(tstat_name, " = ", tstat, ", p = ", p)
   }
-
-  # Return as a latex_snippet object
+  #return as a latex snippet
   new_latex_snippet(code, type = "htest")
 }

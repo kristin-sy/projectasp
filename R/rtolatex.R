@@ -1,41 +1,53 @@
-#' Turn R output into Latex
+#validator to check for type
+validate_latex_snippet <- function(x) {
+  if (!is.character(x$code) || length(x$code) != 1) {
+    stop("`code` must be a single character string")
+  }
+  if (!is.character(x$type) || length(x$type) != 1) {
+    stop("`type` must be a single character string")
+  }
+  x
+}
+
+#constructor for rtolatex
+new_latex_snippet <- function(code = character(), type = character()) {
+  x <- structure(
+    list(code = code, type = type),
+    class = "latex_snippet"
+  )
+  validate_latex_snippet(x)
+}
+
+#' turn R output into latex
 #'
-#' @param x The R object to be converted
-#' @param ... Additional object to the converted
+#' @param x object to be converted into latex
+#' @param ... other objects that need to be converted
 #'
-#' @returns Latex inputs
+#' @returns latex formatted inputs
 #' @export
 #'
 rtolatex <- function(x, ...) {
   UseMethod("rtolatex")
 }
 
-#' Default method for unsupported classes
+#' alternative function when the object is not supported
 #'
-#' @param x An unsupported R object.
-#' @param ... Ignored.
+#' @param x object that is not supported
+#' @param ... ignored only for syntax
 #' @export
-rtolatex_error <- function(x, ...) { ##stopping message for infeasible r to latex
+rtolatex.default <- function(x, ...) {
   stop(
     "No rtolatex() method for objects of class '",
     paste(class(x), collapse = "/"), "'.\n",
-    "Supported classes: numeric, data.frame, htest, ggplot"
+    "Classes supported must fall within: numeric, data.frame, htest, ggplot"
   )
 }
-
-#' @keywords internal
-new_latex_snippet <- function(code, type) { ##define classes
-  structure(
-    list(code = code, type = type),
-    class = "latex_snippet"
-  )
-}
-#' Print a latex object
+#' print latex objects
 #'
-#' @param x A latex_snippet object.
-#' @param ... Ignored.
+#' @param x a latex snippet
+#' @param ... ignored only for syntax
 #' @export
-printlatex <- function(x, ...) {
+print.latex_snippet <- function(x, ...) {
   cat("<latex_snippet [", x$type, "]>\n", sep = "")
   cat(x$code, "\n")
   invisible(x)

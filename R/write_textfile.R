@@ -1,8 +1,8 @@
 #' writing all snippets as .tex files for latex
 #'
 #' creates a .tex file for each entry in the document container
-#' as a separate .tex file in the output folder. These files can then
-#' input into latex using
+#' as a separate .tex file in the output folder
+#' files get reference in latex using the input command
 #'
 #' @param doc document container object
 #' @param ... ignored only for syntax
@@ -17,12 +17,12 @@
 write_textfile <- function(doc, ...) {
   #check that doc is a document container
   if (!inherits(doc, "document_container")) {
-    stop("`doc` must be a document_container object.")
+    stop("`doc` must be a document_container object")
   }
 
   #check that there are snippets to write
   if (length(doc$snippets) == 0) {
-    stop("No snippets to write. Add snippets with add_snippet() first.")
+    stop("No snippets to write. Add snippets with add_snippet() first")
   }
 
   #create the output folder if it doesn't exist

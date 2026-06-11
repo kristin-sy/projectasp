@@ -15,7 +15,7 @@ a document container
 \description{
 creates empty containers to store all latex snippets
 use add_snippet() to add snippets
-use write_tex() to save as files
+use write_textfile() to save as files
 }
 \examples{
 doc <- document_container()

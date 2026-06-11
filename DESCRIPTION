@@ -13,6 +13,7 @@ BugReports: https://github.com/kristin-sy/projectasp/issues
 LinkingTo: 
     Rcpp
 Imports: 
+    dplyr,
     ggplot2,
     Rcpp
 Suggests: 

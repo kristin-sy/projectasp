@@ -1,3 +1,4 @@
+#helper for pvalue in htest
 pvalue <- function(p){
   if (p < 0|| p > 1) {
     stop("`p` should be between 0 and 1")

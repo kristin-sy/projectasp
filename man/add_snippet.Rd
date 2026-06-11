@@ -19,7 +19,7 @@ add_snippet(doc, snippet, name, ...)
 the document container with updates
 }
 \description{
-inserts a latex snippet into the document
+inserts a latex snippet into the document container
 }
 \examples{
 doc <- document_container()

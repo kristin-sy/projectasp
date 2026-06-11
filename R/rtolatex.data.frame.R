@@ -1,11 +1,12 @@
 #' convert dataframe into latex
 #'
-#' Takes a data frame and turns it into a LaTeX tabular environment.
-#' Special characters in the data are automatically escaped.
+#' transforms dataframe to a latex tabular form
+#' special characters are automatically adjust to latex
 #'
 #' @param x a dataframe
 #' @param caption table caption
 #' @param label label for table
+#' @param digits digits to be rounded to
 #' @param ... ignored only for syntax
 #'
 #' @return latex snippet
@@ -13,22 +14,13 @@
 #'
 #' @examples
 #' rtolatex(head(mtcars), caption = "Motor Trend Car Data", label = "tab:mtcars")
-rtolatex.data.frame <- function(x, caption = "", label = "", ...) {
-  #number of columns
-  n_cols <- ncol(x)
-
-  # Column alignment - one "l" per column
-  col_align <- paste(rep("l", n_cols), collapse = " ")
-
-  #column name special characters
-  col_names <- sapply(colnames(x), specialcharacters)
-
-  #header row
-  header <- paste(col_names, collapse = " & ")
-
-  #data row
-  rows <- apply(x, 1, function(row) {
-    # Escape each cell value
+rtolatex.data.frame <- function(x, caption = "", label = "", digits = 2, ...) {
+  x <- dplyr::mutate(x, dplyr::across(dplyr::where(is.numeric), ~ round(., digits))) #numeric rounding to 2 digits
+  column_number <- ncol(x)
+  column_align <- paste(rep("l", column_number), collapse = " ") #column alignment
+  column_names <- sapply(colnames(x), specialcharacters) #special characters in column names
+  header <- paste(column_names, collapse = " & ") #headers
+  rows <- apply(x, 1, function(row) { #data
     escaped <- sapply(as.character(row), specialcharacters)
     paste(escaped, collapse = " & ")
   })
@@ -39,7 +31,7 @@ rtolatex.data.frame <- function(x, caption = "", label = "", ...) {
     "\\centering\n",
     "\\caption{", caption, "}\n",
     "\\label{", label, "}\n",
-    "\\begin{tabular}{", col_align, "}\n",
+    "\\begin{tabular}{", column_align, "}\n",
     "\\hline\n",
     header, " \\\\\n",
     "\\hline\n",
@@ -49,6 +41,6 @@ rtolatex.data.frame <- function(x, caption = "", label = "", ...) {
     "\\end{table}"
   )
 
-  # Return as a latex_snippet object
+  #return as a latex snippet
   new_latex_snippet(code, type = "data.frame")
 }
