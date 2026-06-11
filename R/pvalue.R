@@ -7,7 +7,7 @@ pvalue <- function(p){
     stop("`p` must be a single numeric value")
   }
   if (p < 0.001) {
-    return("$< 0.001$")
+    return("< 0.001")
   }
   formatC(round(p, 3), format = "f", digits = 3)
 }
