@@ -18,9 +18,9 @@ rtolatex.htest <- function(x, ...) {
   #formatting sentence
   if (!is.null(x$parameter)) {
     df <- round(x$parameter, 0)
-    code <- paste0(tstat_name, "(", df, ") = ", tstat, ", p = ", p)
+    code <- paste0(tstat_name, "(", df, ") = ", tstat, ", p ", p)
   } else {
-    code <- paste0(tstat_name, " = ", tstat, ", p = ", p)
+    code <- paste0(tstat_name, " = ", tstat, ", p ", p)
   }
   #return as a latex snippet
   new_latex_snippet(code, type = "htest")
