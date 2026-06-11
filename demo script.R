@@ -28,8 +28,6 @@ doc <- add_snippet(doc, rtolatex(t.test(data, mu = 0)), "ttest")
 image <- ggplot(data.frame(data), aes(x = data)) + geom_histogram(bins = 10)
 doc <- add_snippet(doc, rtolatex(image, filename = "histogram"), "histogram")
 
-specialcharacters("50% accuracy & p_value in $model #1")
-
 #turn all snippets to .tex files
 write_textfile(doc)
 
