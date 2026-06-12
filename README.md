@@ -62,6 +62,17 @@ projectasp imports the following packages:
 `Rcpp` for C++ integration `ggplot2` for saving plots `dplyr` for data
 frame pre-processing
 
+## Applications
+
+**S3 Classes** `document_container` follows the S3 constructor,
+validator and helper structure to ensure objects are always defined and
+created in the correct state.
+
+**C++ Integration** `specialcharacters()` is implemented in C++ through
+Rcpp as checking through each character in a string is computationally
+inefficient and costly. R is known to work better with vectors thus, C++
+and speeds up the scanning process.
+
 ## Workflow
 
 1.  Run local R analysis and call `write_textfile()` to save results as
@@ -78,6 +89,3 @@ frame pre-processing
 A demo script “demoscript.R” is included in the repository which runs
 the function on all four methods: numeric, data frame, hypothesis test,
 plots.
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
